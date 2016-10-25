@@ -61,6 +61,7 @@ compile:
 		make && \
 		make test \
 	;
+	rm /bin/python
 	ln -s /bin/python2 /bin/python # Let's put this back
 
 #-------------------------------------------------------------------------------
