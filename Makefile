@@ -12,7 +12,7 @@ RHEL=$(shell rpm -q --queryformat '%{VERSION}' centos-release)
 
 #-------------------------------------------------------------------------------
 
-all: info install-deps compile package move
+all: info install-deps compile install-tmp package move
 
 #-------------------------------------------------------------------------------
 
@@ -103,7 +103,7 @@ package:
 		--rpm-auto-add-directories \
 		usr/local/bin \
 		usr/local/include \
-		usr/local/lib64 \
+		usr/local/lib \
 		usr/local/share \
 	;
 
