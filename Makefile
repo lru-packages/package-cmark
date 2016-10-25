@@ -35,7 +35,7 @@ info:
 
 .PHONY: clean
 clean:
-	rm -Rf /tmp/installdir* hhvm* mongo* msgpack*
+	rm -Rf /tmp/installdir* cmark*
 
 #-------------------------------------------------------------------------------
 
