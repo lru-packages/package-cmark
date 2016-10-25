@@ -44,8 +44,10 @@ install-deps:
 	yum install -y \
 		cmake \
 		make \
+		python3 \
 		re2c \
 	;
+	ln -s /usr/local/bin/python3.5 /bin/python # Temporary change
 
 #-------------------------------------------------------------------------------
 
@@ -53,18 +55,20 @@ install-deps:
 compile:
 	git clone -q -b $(VERSION) https://github.com/jgm/cmark.git --depth=1;
 	cd cmark && \
-		cmake . && \
+		mkdir -p build && \
+		cd build && \
+		cmake .. && \
 		make && \
-		make test && \
-		make install DESTDIR=/tmp/installdir-$(NAME)-$(VERSION) \
+		make test \
 	;
+	ln -s /bin/python2 /bin/python # Let's put this back
 
 #-------------------------------------------------------------------------------
 
 .PHONY: install-tmp
 install-tmp:
 	mkdir -p /tmp/installdir-$(NAME)-$(VERSION);
-	cd ruby && \
+	cd cmark && \
 		make install DESTDIR=/tmp/installdir-$(NAME)-$(VERSION);
 
 #-------------------------------------------------------------------------------
