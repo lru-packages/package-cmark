@@ -1,4 +1,4 @@
-NAME=cmark
+NAME=commonmark
 VERSION=0.26.1
 EPOCH=1
 ITERATION=1
