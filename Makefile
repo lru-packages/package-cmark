@@ -47,6 +47,7 @@ install-deps:
 		python3 \
 		re2c \
 	;
+	rm -f /bin/python
 	ln -s /usr/local/bin/python3.5 /bin/python # Temporary change
 
 #-------------------------------------------------------------------------------
@@ -61,7 +62,7 @@ compile:
 		make && \
 		make test \
 	;
-	rm /bin/python
+	rm -f /bin/python
 	ln -s /bin/python2 /bin/python # Let's put this back
 
 #-------------------------------------------------------------------------------
