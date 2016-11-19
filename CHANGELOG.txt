@@ -1,2 +1,5 @@
+* Fri Nov 18 2016 Ryan Parman <ryan@ryanparman.com> 0.27.1-1
+- Bundles cmark 0.27.1.
+
 * Mon Oct 24 2016 Ryan Parman <ryan@ryanparman.com> 0.26.1-1
 - Bundles cmark 0.26.1.
