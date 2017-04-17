@@ -76,7 +76,8 @@ standard-clone:
 
 .PHONY: gfm-clone
 gfm-clone:
-	git clone -q -b $(COMMIT) https://github.com/github/cmark.git;
+	git clone -q https://github.com/github/cmark.git;
+	git checkout $(COMMIT);
 
 .PHONY: compile
 compile:
