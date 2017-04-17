@@ -1,5 +1,3 @@
-NAME=commonmark
-VERSION=0.27.1
 ITERATION=1.lru
 PREFIX=/usr/local
 LICENSE=PHP
@@ -11,7 +9,29 @@ RHEL=$(shell rpm -q --queryformat '%{VERSION}' centos-release)
 
 #-------------------------------------------------------------------------------
 
-all: info clean install-deps compile install-tmp package move
+all:
+	@echo "Run 'make standard' or 'make gfm'."
+
+#-------------------------------------------------------------------------------
+
+.PHONY: standard
+standard: standard-vars info clean install-deps standard-clone compile install-tmp package move
+
+.PHONY: gfm
+standard: gfm-vars info clean install-deps gfm-clone compile install-tmp package move
+
+#-------------------------------------------------------------------------------
+
+.PHONY: standard-vars
+standard-vars:
+	$(eval NAME=commonmark)
+	$(eval VERSION=0.27.1)
+
+.PHONY: gfm-vars
+gfm-vars:
+	$(eval NAME=commonmark-gfm)
+	$(eval VERSION=20170404.a2022f5)
+	$(eval COMMIT=a2022f5de71150af7c76f8113a2aa058249d05f3)
 
 #-------------------------------------------------------------------------------
 
@@ -46,13 +66,20 @@ install-deps:
 		re2c \
 	;
 	rm -f /bin/python
-	ln -s /usr/local/bin/python3.5 /bin/python # Temporary change
+	ln -s /usr/local/bin/python3.6 /bin/python # Temporary change
 
 #-------------------------------------------------------------------------------
 
+.PHONY: standard-clone
+standard-clone:
+	git clone -q -b $(VERSION) https://github.com/jgm/cmark.git --depth=1;
+
+.PHONY: gfm-clone
+gfm-clone:
+	git clone -q -b $(COMMIT) https://github.com/github/cmark.git --depth=1;
+
 .PHONY: compile
 compile:
-	git clone -q -b $(VERSION) https://github.com/jgm/cmark.git --depth=1;
 	cd cmark && \
 		mkdir -p build && \
 		cd build && \
@@ -95,7 +122,7 @@ package:
 		--rpm-digest md5 \
 		--rpm-compression gzip \
 		--rpm-os linux \
-		--rpm-changelog CHANGELOG.txt \
+		--rpm-changelog CHANGELOG-$(NAME).txt \
 		--rpm-dist el$(RHEL) \
 		--rpm-auto-add-directories \
 		usr/local/bin \
