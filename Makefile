@@ -39,6 +39,7 @@ gfm-vars:
 info:
 	@ echo "NAME:        $(NAME)"
 	@ echo "VERSION:     $(VERSION)"
+	@ echo "COMMIT:      $(COMMIT)"
 	@ echo "ITERATION:   $(ITERATION)"
 	@ echo "PREFIX:      $(PREFIX)"
 	@ echo "LICENSE:     $(LICENSE)"
