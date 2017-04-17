@@ -1,0 +1,2 @@
+* Mon Apr 17 2017 Ryan Parman <ryan@ryanparman.com> 20170404.a2022f5-1
+- Bundles Commonmark (with GitHub-flavored enhancements) 20170404.a2022f5.
