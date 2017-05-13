@@ -32,8 +32,7 @@ standard-vars:
 .PHONY: gfm-vars
 gfm-vars:
 	$(eval NAME=commonmark-gfm)
-	$(eval VERSION=20170404.a2022f5)
-	$(eval COMMIT=a2022f5de71150af7c76f8113a2aa058249d05f3)
+	$(eval VERSION=0.27.1.gfm.0)
 
 #-------------------------------------------------------------------------------
 
@@ -81,8 +80,7 @@ standard-clone:
 
 .PHONY: gfm-clone
 gfm-clone:
-	git clone -q https://github.com/github/cmark.git;
-	cd cmark && git checkout $(COMMIT);
+	git clone -q -b $(VERSION) https://github.com/github/cmark.git --depth=1;
 
 .PHONY: compile
 compile:
