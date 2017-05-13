@@ -20,7 +20,7 @@ all:
 standard: standard-vars info clean install-deps standard-clone compile install-tmp package move
 
 .PHONY: gfm
-standard: gfm-vars info clean install-deps gfm-clone compile install-tmp package move
+gfm: gfm-vars info clean install-deps gfm-clone compile install-tmp package move
 
 #-------------------------------------------------------------------------------
 
