@@ -1,2 +1,5 @@
+* Fri May 12 2017 Ryan Parman <ryan@ryanparman.com> 0.27.1.gfm.0-1
+- Updated to version 0.27.1.gfm.0.
+
 * Mon Apr 17 2017 Ryan Parman <ryan@ryanparman.com> 20170404.a2022f5-1
 - Bundles Commonmark (with GitHub-flavored enhancements) 20170404.a2022f5.
