@@ -27,12 +27,12 @@ gfm: gfm-vars info clean install-deps gfm-clone compile install-tmp package move
 .PHONY: standard-vars
 standard-vars:
 	$(eval NAME=commonmark)
-	$(eval VERSION=0.27.1)
+	$(eval VERSION=0.28.0)
 
 .PHONY: gfm-vars
 gfm-vars:
 	$(eval NAME=commonmark-gfm)
-	$(eval VERSION=0.27.1.gfm.0)
+	$(eval VERSION=0.27.1.gfm.4)
 
 #-------------------------------------------------------------------------------
 
