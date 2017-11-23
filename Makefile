@@ -32,7 +32,7 @@ standard-vars:
 .PHONY: gfm-vars
 gfm-vars:
 	$(eval NAME=commonmark-gfm)
-	$(eval VERSION=0.27.1.gfm.4)
+	$(eval VERSION=0.28.0.gfm.11)
 
 #-------------------------------------------------------------------------------
 
